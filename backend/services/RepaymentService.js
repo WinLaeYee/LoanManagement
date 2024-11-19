@@ -38,6 +38,8 @@ class RepaymentService {
   async getRepaymentsByLoan(loanId) {
     return await repaymentRepository.findRepaymentsByLoan(loanId);
   }
+
+  
 }
 
 module.exports = new RepaymentService();

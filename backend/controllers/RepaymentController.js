@@ -20,6 +20,15 @@ class RepaymentController {
       res.status(500).json({ error: error.message });
     }
   }
+
+  async getRepaymentsByLoan(req, res) {
+    try {
+      const repayments = await repaymentService.getRepaymentsByLoan(req.params.loanId);
+      res.status(200).json(repayments);
+    } catch (error) {
+      res.status(500).json({ error: error.message });
+    }
+  }
 }
 
 module.exports = new RepaymentController();
